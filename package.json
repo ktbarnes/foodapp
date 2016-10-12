@@ -1,0 +1,22 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "a foodapp for pics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formidable-flamingos/foodapp.git"
+  },
+  "keywords": [
+    "foodapp"
+  ],
+  "author": "Katie Barnes, Laurhens Daudier, Bernard Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/formidable-flamingos/foodapp/issues"
+  },
+  "homepage": "https://github.com/formidable-flamingos/foodapp#readme"
+}
