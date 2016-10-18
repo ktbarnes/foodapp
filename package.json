@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/formidable-flamingos/foodapp/issues"
   },
-  "homepage": "https://github.com/formidable-flamingos/foodapp#readme"
+  "homepage": "https://github.com/formidable-flamingos/foodapp#readme",
+  "dependencies": {
+    "angular-simple-logger": "^0.1.7"
+  }
 }
