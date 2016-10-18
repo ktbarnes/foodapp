@@ -1,4 +1,4 @@
-angular.module("foodApp", [])
+angular.module("foodApp.map", [])
 
 .controller("mapController", function($scope, uiGmapGoogleMapApi) {
     // Do stuff with your $scope.
