@@ -6,7 +6,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "../public"));
 
-<<<<<<< HEAD
 
 var firebase = require("firebase");
 
@@ -22,6 +21,3 @@ ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 app.listen(process.env.PORT || 7777)
-=======
-app.listen(process.env.PORT || 7777);
->>>>>>> remove merge conflict messages
