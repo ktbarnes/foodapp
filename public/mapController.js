@@ -1,6 +1,6 @@
-angular.module("foodApp.map", [])
+angular.module("foodApp.map", ['uiGmapgoogle-maps'])
 
-.controller("mapController", function($scope, uiGmapGoogleMapApi) {
+.controller("mapController", function ($scope, uiGmapGoogleMapApi) {
     // Do stuff with your $scope.
     // Note: Some of the directives require at least something to be defined originally!
     // e.g. $scope.markers = []

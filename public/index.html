@@ -2,11 +2,16 @@
 <head>
   <title> foodApp </title>
 
+  <script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-  <script src="https://cdn.jsdelivr.net/angular.google-maps/2.4.0/angular-google-maps.js"></script>
-  <script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGoCtNm9gWFTk8qqXmWBsVbnfVEmeyiHk"></script>
+  <script src="../node_modules/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="../node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src='app.js' type="text/javascript"></script>
+  <script src='mapController.js' type="text/javascript"></script>
+
+  <link href='style.css' rel='stylesheet'>
 
 </head>
 
@@ -16,8 +21,7 @@
     <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
   </div>
 
-  <script src='app.js' type="text/javascript"></script>
-  <script src='mapController.js' type="text/javascript"></script>
+
 
 </body>
 
