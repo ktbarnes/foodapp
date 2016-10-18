@@ -6,6 +6,7 @@ html, body {
 #map {
   height: 100%;
   width: 50%;
+  float: left;
 }
 
 .controls {
@@ -51,4 +52,17 @@ html, body {
 }
 #target {
   width: 345px;
+}
+
+.RightContent {
+  overflow: auto;
+  width: 48%;
+  float: right;
+  padding: 1%;
+}
+
+.result {
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 10;
 }
