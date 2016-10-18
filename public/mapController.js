@@ -1,4 +1,4 @@
-angular.module("foodApp.map", ['uiGmapgoogle-maps'])
+angular.module("foodApp", ['uiGmapgoogle-maps'])
 
 .controller("mapController", function ($scope, uiGmapGoogleMapApi) {
     // Do stuff with your $scope.
@@ -17,5 +17,3 @@ angular.module("foodApp.map", ['uiGmapgoogle-maps'])
     });
 });
 
-// add map object to $scope?
-// $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
