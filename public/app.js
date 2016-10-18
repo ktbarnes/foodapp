@@ -1,4 +1,4 @@
-angular.module("foodApp", ['ngRoute', 'uiGmapgoogle-maps'])
+angular.module("foodApp", ['ngRoute', 'uiGmapgoogle-maps', 'foodApp.map'])
 
 .config(function ($routeProvider, uiGmapGoogleMapApiProvider) {
 
