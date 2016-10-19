@@ -42,7 +42,7 @@ function initMap() {
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
       'Place ID: ' + place.place_id + '<br>' +
-      place.formatted_address);
+      place.formatted_address + '<br>' + place.reviews[0].text);
     infowindow.open(map, marker);
 
     console.log(place);
