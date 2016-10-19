@@ -4,9 +4,10 @@ html, body {
   padding: 0;
 }
 #map {
-  height: 100%;
-  width: 50%;
+  height: 90%;
+  width: 48%;
   float: left;
+  padding: 1%;
 }
 
 .controls {

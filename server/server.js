@@ -1,17 +1,18 @@
 var express = require('express');
-var bodyParser = ('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 
-app.use(bodyParser.json());
+require('./middleware.js')(app, express);
 
-app.use(express.static(__dirname + "../public"));
-
+app.get('/', function(req,res) {
+  res.sendFile('index.html');
+});
 
 var firebase = require("firebase");
 
 // Initialize the app with no authentication
 firebase.initializeApp({
-  databaseURL: "https://databaseName.firebaseio.com"
+  databaseURL: "https://foodapp-8d3bd.firebaseio.com/"
 });
 
 // The app only has access to public data as defined in the Security Rules
