@@ -12,7 +12,8 @@ var firebase = require("firebase");
 
 // Initialize the app with no authentication
 firebase.initializeApp({
-  databaseURL: "https://foodapp-8d3bd.firebaseio.com/"
+  databaseURL: "https://foodapp-8d3bd.firebaseio.com/",
+  storageBucket: "gs://foodapp-8d3bd.appspot.com"
 });
 
 // The app only has access to public data as defined in the Security Rules
