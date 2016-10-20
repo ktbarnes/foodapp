@@ -4,20 +4,15 @@
 
   <link href='style.css' rel='stylesheet'>
 
-  <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-<!--  <script src='node_modules/ng-file-upload/dist/ng-file-upload.js'></script> -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js'></script>
-
+  <script src='/node_modules/ng-file-upload/dist/ng-file-upload.js'></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVz6A7o7A9KsbM4faEJzcDQJ30yMHdHzo&libraries=places&callback=initMap" async defer></script>
 
-  <script src='app.js'></script>
   <script src='food.js'></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.js"></script>
-
-  <script src='firebaseupload.js'></script>
+  <script src='app.js'></script>
+  <script src='upload.js'></script>
 
 </head>
 
@@ -32,7 +27,7 @@
     <p>{{result.description}}</p>
   </div>
 </div>
-<!--
+
 <div ng-controller='UploadCtrl'>
   <form name="myForm">
     <fieldset>
@@ -61,28 +56,6 @@
     <br>
   </form>
 </div>
--->
-
-<div ng-controller='FirebaseCtrl'>
-    <div class="container-fluid">
-      <p class="text-info" align="center">Upload Images to Firebase</p>
-      <hr />
-
-      <form ng-submit="uploadFile()">
-        <input type="file" name="file" class="inputimg" id="nameImg" accept="image/*">
-        <br />
-        <span class="input-group-btn">
-                <button  type="submit" class="btn btn-block">Upload Image 
-                  <i class="material-icons">send</i>
-                </button>
-          </span>
-      </form>
-      <hr />
-      <div ng-repeat="img in imgs | toArray | orderBy: '-date'" class="col-xs-12 col-sm-6 col-md-3">
-        <img ng-src="{{img.base64}}">
-        <a class="btn btn-danger btn-block" ng-click="deleteimg(img.$id)">Delete</a>
-      </div>
-    </div>
 
 </body>
 

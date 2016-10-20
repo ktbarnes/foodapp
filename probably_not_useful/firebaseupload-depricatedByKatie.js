@@ -2,6 +2,8 @@ angular.module("firebaseupload",["firebase","angular.filter"])
 .controller("FirebaseCtrl", function($scope, $firebaseArray) {
    var ref = new Firebase("https://foodapp-8d3bd.firebaseio.com/");
 
+   var img = new Firebase("https://foodapp-8d3bd.firebaseio.com/");
+
   // var img = new Firebase("gs://foodapp-8d3bd.appspot.com/Images");
   $scope.imgs = $firebaseArray(img);
 
