@@ -9,17 +9,23 @@ app.get('/', function(req,res) {
 });
 
 var firebase = require("firebase");
+var gcloud = require("google-cloud");
+var storage = gcloud.storage;
+
+var gcs = storage({projectId: 'foodapp-8d3bd'});
+var bucket = gcs.bucket('gs://foodapp-8d3bd.appspot.com/Images');
 
 // Initialize the app with no authentication
 firebase.initializeApp({
-  databaseURL: "https://foodapp-8d3bd.firebaseio.com/",
-  storageBucket: "gs://foodapp-8d3bd.appspot.com"
+  databaseURL: "https://foodapp-8d3bd.firebaseio.com/"
 });
 
 // The app only has access to public data as defined in the Security Rules
 var db = firebase.database();
 var ref = db.ref("/Places");
+
 ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
+
 app.listen(process.env.PORT || 7777)
