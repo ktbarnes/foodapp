@@ -1,4 +1,4 @@
-angular.module("foodApp", ['fileUpload','ngRoute','foodServices'])
+angular.module("foodApp", ['fileUpload','ngRoute','foodServices','foodmap'])
 .config(function($routeProvider) {
   $routeProvider
   .when('/search', {
