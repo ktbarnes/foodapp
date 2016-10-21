@@ -51,6 +51,7 @@ html, body {
   font-size: 13px;
   font-weight: 300;
 }
+
 #target {
   width: 345px;
 }
@@ -66,4 +67,8 @@ html, body {
   border: 2px solid lightgrey;
   border-radius: 10px;
   padding: 10;
+}
+
+.display {
+  float: left;
 }
