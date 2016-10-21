@@ -13,7 +13,25 @@ app.get('/node_modules', function(req,res) {
   res.sendFile(req.body.url);
 });
 
+// app.post('/pics', function(req, res) {
+//   console.log('hello', req.busboy);
+//   request.post({
+//     headers: {'Authorization':'Client-ID 2f42bf48eb1d7bd'},
+//     url:'https://api.imgur.com/3/image',
+//     data: {'image': req.busboy}
+//   }, function(error, response) {
+//     console.log('inside callback',response.body);
+//     res.send(response.data);
+//     res.end();
+//   });
+// });
+
 var firebase = require("firebase");
+
+// var gcloud = require("google-cloud");
+// var storage = gcloud.storage;
+// var gcs = storage({projectId: 'foodapp-8d3bd'});
+// var bucket = gcs.bucket('gs://foodapp-8d3bd.appspot.com/Images');
 
 // Initialize the app with no authentication
 firebase.initializeApp({
@@ -28,14 +46,10 @@ ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 
-app.post('/places', function(req,res){
+app.put('/places', function(req,res){
   console.log('inside post',req.body);
-  var now = new Date().valueOf();
-  var filename = req.body.filename.split('.')[0];
-  var child = now + filename;
-  ref.child(child).set({
+  ref.set({
     id: req.body.id,
-    name: req.body.name,
     address: req.body.address,
     url: req.body.url,
     likes: 0
@@ -46,7 +60,7 @@ app.put('/places/:id', function(req,res) {
   console.log('updating number of likes',req.body)
   ref.update({
     likes: req.body.likes
-  });
+  })
 });
 
 app.get('/places', function(req,res){

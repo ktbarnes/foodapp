@@ -4,11 +4,14 @@ angular.module('fileUpload',['ngFileUpload','ngAutocomplete'])
   
   $scope.uploadPic = function(file, details) {
     console.log(file);
-    console.log('line 8', details);
+    console.log('line 8', details.name);
     var picture = {
+      filename: file.name,
+      name: details.name,
       address: details.formatted_address,
       id: details.place_id
     }
+    if (details.rating) picture.rating = details.rating;
     console.log('line 12', picture);
     // file.upload = Upload.upload({
     //   url:'/pics',
