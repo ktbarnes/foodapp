@@ -39,13 +39,25 @@ app.post('/places', function(req,res){
     address: req.body.address,
     url: req.body.url,
     likes: 0
+  })
+  .then(function(response) {
+    res.status(200).json({databaseID: child});
+  })
+  .catch(function(error) {
+    console.error(error);
   });
 });
 
-app.put('/places/:id', function(req,res) {
+app.put('/places', function(req,res) {
   console.log('updating number of likes',req.body)
-  ref.update({
+  ref.child(req.body.databaseID).update({
     likes: req.body.likes
+  })
+  .then(function(response) {
+    res.sendStatus(200);
+  })
+  .catch(function(error) {
+    console.error(error);
   });
 });
 

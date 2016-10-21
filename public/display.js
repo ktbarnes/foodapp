@@ -9,16 +9,27 @@ angular.module('Display',[])
       for(var key in resp) {
         for(var key2 in resp[key]) {
           if (typeof resp[key][key2] === 'object' && !Array.isArray(resp[key][key2])){
-            console.log(key2);
             if (key2 === 'headers') continue;
-            $scope.pics.push(resp[key][key2]);
+            var pic = resp[key][key2];
+            pic.databaseID = key2;
+            $scope.pics.push(pic);
           }
         }
       }
-      console.log($scope.pics);
     });
   }
 
   $scope.getPics();
+
+  $scope.like = function(databaseID) {
+    console.log('line 25 key display.js $scope.like', databaseID);
+    for(var i = 0; i < $scope.pics.length; i++) {
+      if($scope.pics[i].databaseID === databaseID) {
+        var picture = $scope.pics[i];
+      }
+    }
+    picture.likes++;
+    Pictures.like(picture);
+  }
 
 }]);

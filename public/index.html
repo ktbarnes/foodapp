@@ -74,11 +74,18 @@
 </div>
 
 <div class='display' ng-controller='DisplayCtrl'>
-  <div class='pic' ng-repeat='pic in pics'>
+  
+  <form name="filter">
+    <label>Search: <input type='text' ng-model='search'></label>
+  </form>
+
+  <div class='pic' ng-repeat="($index, pic) in pics | filter:search | orderBy: '-likes' " >
     <img ng-src='{{pic.url}}'></img>
     <h4 class='name'>{{pic.name}}</h4>
     <p>{{pic.address}}</p>
-    <button class='likes'>Likes:{{pic.likes}}</button>
+    <form ng-submit='like(pic.databaseID)'>
+      <button class='likes' type='submit'>Likes: {{pic.likes}}</button>
+    </form>
   </div>
 </div>
 

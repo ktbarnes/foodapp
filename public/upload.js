@@ -1,6 +1,6 @@
 angular.module('fileUpload',['ngFileUpload','ngAutocomplete'])
 .controller('UploadCtrl', [ '$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
-  $scope.pics = $scope.pics || [];
+  // $scope.pics = $scope.pics || [];
   
   $scope.uploadPic = function(file, details) {
     console.log(file);
@@ -31,7 +31,14 @@ angular.module('fileUpload',['ngFileUpload','ngAutocomplete'])
       console.log('line 20 have a response',resp.data.data);
       picture.url = resp.data.data.link;
       $scope.picFile = null;
-      Pictures.addOne(picture);
+      Pictures.addOne(picture)
+      .then(function(response) {
+        picture.databaseID = response.data.databaseID;
+        console.log(picture);
+        console.log($scope.pics);
+        $scope.pics.push(picture);
+        console.log($scope.pics);
+      });
       // document.getElementById('file').value = null;
     });
   }

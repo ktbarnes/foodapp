@@ -17,9 +17,18 @@ angular.module('foodServices', [])
     });
   }
 
+  var like = function(picture) {
+    return $http({
+      method: 'PUT',
+      url: '/places',
+      data: picture
+    });
+  }
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    like: like
   }
 
 }]);
