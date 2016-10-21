@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
   <script src='/node_modules/ng-file-upload/dist/ng-file-upload.js'></script>
   <script src='/node_modules/ng-autocomplete/src/ngAutocomplete.js'></script>
+  <script src='/node_modules/ngmap/build/scripts/ng-map.js'></script>
   <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVz6A7o7A9KsbM4faEJzcDQJ30yMHdHzo&libraries=places&callback=initMap" async defer></script> -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADxfvlkkFsXf7TdnHHfPaoQRQ6UhNttvg&libraries=places"></script>
 
@@ -16,6 +17,7 @@
   <script src='food.js'></script>
   <script src='app.js'></script>
   <script src='upload.js'></script>
+  <script src='map.js'></script>
 
 </head>
 
@@ -32,14 +34,22 @@
   </div>
 </div>
 -->
+<div ng-controller='MapCtrl'>
+  <form name='mapForm'>
+    <input id="pac-input" class="controls" type="text" ng-autocomplete ng-model='mapautocomplete' placeholder="Search Box">
+  </form>
+  <div id='map' ng-controller="MapCtrl">
+    <ng-map center="[40.74, -74.18]"></ng-map>
+  </div>
+</div>
 
 <div ng-controller='UploadCtrl'>
   <form name="myForm">
     <fieldset>
       <legend>Upload on form submit</legend> 
-      Location:
+      Location: <!--
       <input type="text"  name='userName' ng-autocomplete ng-model="autocomplete" options="options" details="details" size='40'/>      
-      <i ng-show="myForm.userName.$error.required">*required</i>
+      <i ng-show="myForm.userName.$error.required">*required</i> -->
       <br>Photo:
       <input type="file" ngf-select ng-model="picFile" name="file"    
              accept="image/*" ngf-max-size="2MB" required
