@@ -1,4 +1,6 @@
-function initMap() {
+angular.module("map", [])
+.controller('MapCtrl',['$scope', function($scope) {
+$scope.initMap = function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -33.8688, lng: 151.2195},
     zoom: 13
@@ -40,8 +42,6 @@ function initMap() {
     });
     marker.setVisible(true);
 
-    $scope.place = place;
-
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
       'Place ID: ' + place.place_id + '<br>' +
       place.formatted_address + '<br>' + place.reviews[0].text);
@@ -50,4 +50,4 @@ function initMap() {
     console.log(place);
   });
 }
-
+}]);

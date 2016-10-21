@@ -47,7 +47,26 @@ ref.once("value", function(snapshot) {
 });
 
 app.post('/places', function(req,res){
-
+  console.log('inside post',req.body);
+  ref.set({
+    id: req.body.id,
+    address: req.body.address,
+    url: req.body.url,
+    likes: 0
+  });
 });
+
+app.put('/places:id', function(req,res) {
+  console.log('updating number of likes',req.body)
+  ref.update({
+    likes: req.body.likes
+  })
+});
+
+app.get('/places', function(req,res){
+  ref.once("value", function(snapshot) {
+    res.json(snapshot.val());
+  });
+})
 
 app.listen(process.env.PORT || 7777)
