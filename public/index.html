@@ -47,9 +47,9 @@
   <form name="myForm">
     <fieldset>
       <legend>Upload on form submit</legend> 
-      Location: <!--
+      Location: 
       <input type="text"  name='userName' ng-autocomplete ng-model="autocomplete" options="options" details="details" size='40'/>      
-      <i ng-show="myForm.userName.$error.required">*required</i> -->
+      <i ng-show="myForm.userName.$error.required">*required</i>
       <br>Photo:
       <input type="file" ngf-select ng-model="picFile" name="file"    
              accept="image/*" ngf-max-size="2MB" required
