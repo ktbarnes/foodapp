@@ -1,0 +1,12 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVz6A7o7A9KsbM4faEJzcDQJ30yMHdHzo&libraries=places&callback=initMap" async defer></script>
+
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+
+<div id="map"></div>
+
+<div id='results' class='RightContent' ng-controller='SearchCtrl'>
+  <div class='result' ng-repeat='result in results'>
+    <h4 class='name'>{{result.name}}</h4>
+    <p>{{result.description}}</p>
+  </div>
+</div>
