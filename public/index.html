@@ -56,7 +56,9 @@
     Location: {{mapModule.place.geometry.location}}<br/>
   </div>
     address : {{mapModule.address}}
-  <ng-map></ng-map>
+  <ng-map zoom="13" center="[40.747559, -73.989861]">
+    <marker position="{{mapModule.place.geometry.location}}" animation="Animation.BOUNCE"></marker>
+  </ng-map>
 </div>
 
 <div ng-controller='UploadCtrl'>
