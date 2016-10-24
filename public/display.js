@@ -1,4 +1,4 @@
-angular.module('Display',[])
+angular.module('Display', [])
 .controller('DisplayCtrl', ['$scope','NgMap', 'Locations', function($scope, Map, Locations) {
   $scope.address = '';
   $scope.location = '';

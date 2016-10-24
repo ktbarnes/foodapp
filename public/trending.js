@@ -1,4 +1,4 @@
-angular.module('Trending',[])
+angular.module('Trending', [])
 .controller('TrendingCtrl', ['$scope', 'Pictures', function($scope, Pictures) {
 
   $scope.pics = [];

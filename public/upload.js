@@ -1,12 +1,12 @@
-angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
+angular.module('FileUpload', ['ngFileUpload','ngAutocomplete'])
 .controller('UploadCtrl', ['$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
 
   $scope.result = false;
   $scope.error = false;
+  
   // Fired upon ng-click of button in upload.html view
   $scope.uploadPic = function(file, details) {
 
-    console.log('inside uploadPic');
     $scope.result = false;
     $scope.error = false;
 
