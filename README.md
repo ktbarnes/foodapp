@@ -20,10 +20,9 @@
 
 ## Usage
 
-> Some usage instructions
-> Go to our web app [here](https://snappydish.herokuapp.com)
+> Go to our web app [here](https://snappydish.herokuapp.com) to try it out.
 
-> To upload a photo:
+To upload a photo:
 
   - enter the location of the food place in the location field
   - click on the 'choose file' to select a photo to upload
@@ -45,9 +44,9 @@ npm install
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+- Add user authentication
 
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+TBD
