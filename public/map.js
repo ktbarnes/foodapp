@@ -3,6 +3,9 @@ angular.module('foodmap',['ngMap'])
 
 
   var mapModule = this;
+
+//  Limit search results to individual places. Keep in mind that there are still
+// individual place markers for general places like zip codes & towns
   mapModule.types = "['establishment']";
 
 //Change map location based on location submitted through search box
@@ -12,14 +15,9 @@ angular.module('foodmap',['ngMap'])
     mapModule.map.setCenter(mapModule.place.geometry.location);
   }
 
+//render Map
   NgMap.getMap().then(function(map) {
     mapModule.map = map;
   });
-  // NgMap.getMap().then(function(map) {
-  //   console.log(map.getCenter());
-  //   console.log('markers', map.markers);
-  //   console.log('shapes', map.shapes);
-  // });
-
 
 }]);
