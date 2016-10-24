@@ -40,7 +40,6 @@ angular.module('foodServices', [])
     loc = location;
   }
 
-
   var getLoc = function() {
     return loc;
   }
