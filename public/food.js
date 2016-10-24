@@ -17,7 +17,7 @@ angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trendin
     activeNav: 'upload'
   })
   .otherwise({
-    redirectTo: '/trending.html'
+    redirectTo: '/trending'
   });
 }])
 .controller('DefaultCtrl',['$scope', '$location', function($scope, $location) {
