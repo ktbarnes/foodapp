@@ -1,4 +1,4 @@
-angular.module('foodmap',['ngMap'])
+angular.module('Map',['ngMap'])
 .controller('MapCtrl', [ '$scope','NgMap', function($scope,NgMap) {
 
 
