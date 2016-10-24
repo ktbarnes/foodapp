@@ -6,7 +6,7 @@
 
   <div class='pic' ng-repeat="($index, pic) in pics | filter:search | orderBy: '-likes' "> <div class='innerpic'>
     <img ng-src='{{pic.url}}'></img> </div>
-    <h4 class='name'>{{pic.name}}</h4>
+    <h3 class='name'>{{pic.name}}</h3>
     <p>{{pic.address}}</p>
     <form ng-submit='like(pic.databaseID)'>
       <button class='likes' type='submit'>Likes: {{pic.likes}}</button>
