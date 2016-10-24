@@ -1,5 +1,6 @@
 angular.module('Trending',[])
-.controller('TrendingCtrl', [ '$scope', 'Pictures', function($scope, Pictures) {
+.controller('TrendingCtrl', [ '$scope', 'Pictures', '$route', function($scope, Pictures, $route) {
+  $scope.route = $route;
   $scope.pics = $scope.pics || [];
 
   $scope.getPics = function() {

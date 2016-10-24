@@ -3,15 +3,18 @@ angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trendin
   $routeProvider
   .when('/display', {
     templateUrl: 'views/display.html',
-    controller: 'DisplayCtrl'
+    controller: 'DisplayCtrl',
+    activeNav: 'display'
   })
   .when('/trending', {
     templateUrl: 'views/trending.html',
-    controller: 'TrendingCtrl'
+    controller: 'TrendingCtrl',
+    activeNav: 'trending'
   })
   .when('/upload', {
     templateUrl: 'views/upload.html',
-    controller: 'UploadCtrl'
+    controller: 'UploadCtrl',
+    activeNav: 'upload'
   })
   .otherwise({
     redirectTo: '/trending.html'

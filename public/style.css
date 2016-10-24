@@ -5,7 +5,7 @@ html, body {
 }
 ng-map {
   height: 90%;
-  width: 48%;
+  width: 38%;
   float: left;
   padding: 1%;
 }
@@ -57,10 +57,11 @@ ng-map {
 }
 
 .RightContent {
-  overflow: auto;
-  width: 48%;
+  overflow-y: scroll;
+  width: 58%;
   float: right;
   padding: 1%;
+  max-height: 90%;
 }
 
 .result {
@@ -74,12 +75,58 @@ ng-map {
 }
 
 .pic {
+  /*
   width: 600px;
   height: 600px;
+  */
+  max-width: 100%;
   margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px solid blue;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.pic img {
+.innerpic {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pic .innerpic img {
+  max-width: 90%;
+  /*
+  margin-left: auto;
+  margin-right: auto
+  */  /*
   height: 75%;
   width: 75%;
+  */
+}
+
+.trendingSearch {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+    display: inline-block;
+    width: 10%;
+    padding: 1em;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+li.active {
+    background: blue;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li.active a {
+    color: white;
+    text-decoration: none;
 }
