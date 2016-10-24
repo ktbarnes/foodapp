@@ -1,5 +1,5 @@
-angular.module('Map',['ngMap'])
-.controller('MapCtrl', [ '$scope','NgMap', 'Locations', function($scope, NgMap, Locations) {
+angular.module('Map', ['ngMap'])
+.controller('MapCtrl', ['$scope','NgMap', 'Locations', function($scope, NgMap, Locations) {
 
   $scope.address = '';
   $scope.location = '';

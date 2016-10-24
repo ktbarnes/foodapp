@@ -15,7 +15,7 @@
       <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"><br/><br/><button ng-click="picFile = null" ng-show="picFile">Remove</button>
       <br>
       <button ng-disabled="!myForm.$valid"
-              ng-click="uploadPic(picFile, details)">Submit</button>
+              ng-click="uploadPic(picFile, details)">Submit</button> <br/>
       <span ng-show="result">Upload Successful</span>
       <span class="err" ng-show="error">{{errorMsg}}</span>
     </fieldset>

@@ -1,14 +1,15 @@
-angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
-.controller('UploadCtrl', [ '$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
+angular.module('FileUpload', ['ngFileUpload','ngAutocomplete'])
+.controller('UploadCtrl', ['$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
 
   $scope.result = false;
   $scope.error = false;
+  
   // Fired upon ng-click of button in upload.html view
   $scope.uploadPic = function(file, details) {
 
     $scope.result = false;
     $scope.error = false;
-    
+
   // Creates data structure that is sent to the server
     var picture = {
       filename: file.name,
@@ -25,6 +26,7 @@ angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
     })
     // Once the Imgur API call is successful, get the resulting imgur link and save it and our data structure object to the database
     .then(function(resp){
+      // Displays success message if upload is successful
       $scope.result = true;
       picture.url = resp.data.data.link;
       $scope.picFile = null;
@@ -32,7 +34,8 @@ angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
       Pictures.addOne(picture);
     })
     .catch(function(error) {
-      $scope.errorMsg = error;
+      // Displays error message if trouble uploading
+      $scope.errorMsg = "Error";
       $scope.error = true;
     });
 

@@ -1,12 +1,14 @@
-angular.module('Trending',[])
-.controller('TrendingCtrl', [ '$scope', 'Pictures', function($scope, Pictures) {
+angular.module('Trending', [])
+.controller('TrendingCtrl', ['$scope', 'Pictures', function($scope, Pictures) {
 
-  $scope.pics = $scope.pics || [];
+  $scope.pics = [];
 
   $scope.getPics = function() {
+    // Calls the factory method that sends a get request to the server
     Pictures.getAll()
     .then(function(resp) {
       $scope.pics = [];
+     // Logic to throw out anything that is not actually saved in the database 
       for(var key in resp) {
         for(var key2 in resp[key]) {
           if (typeof resp[key][key2] === 'object' && !Array.isArray(resp[key][key2])){
@@ -20,16 +22,23 @@ angular.module('Trending',[])
     });
   }
 
+  // Gets the pictures when the controller is mounted
   $scope.getPics();
 
+  // Called every time a like button is clicked
   $scope.like = function(databaseID) {
-    console.log('line 25 key trending.js $scope.like', databaseID);
+
+    // Find the databaseID associated wtih the pic that was liked
     for(var i = 0; i < $scope.pics.length; i++) {
       if($scope.pics[i].databaseID === databaseID) {
         var picture = $scope.pics[i];
       }
     }
+
+    // Increment like counter
     picture.likes++;
+
+    // Send updated information to database via a put request
     Pictures.like(picture);
   }
 
