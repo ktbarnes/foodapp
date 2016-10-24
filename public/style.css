@@ -72,3 +72,14 @@ ng-map {
 .trending {
   float: left;
 }
+
+.pic {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 30px;
+}
+
+.pic img {
+  height: 75%;
+  width: 75%;
+}
