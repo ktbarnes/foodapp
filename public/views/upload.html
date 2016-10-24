@@ -1,10 +1,9 @@
 <div ng-controller='UploadCtrl'>
-  <form name="myForm">
+  <form name="myForm" class='myForm'>
+    <h3>Upload Picture</h3>
     <fieldset>
-      <legend>Upload on form submit</legend>
       Location:
       <input type="text"  name='userName' ng-autocomplete ng-model="autocomplete" options="options" details="details" size='40'/>
-      <i ng-show="myForm.userName.$error.required">*required</i>
       <br>Photo:
       <input type="file" ngf-select ng-model="picFile" name="file"
              accept="image/*" ngf-max-size="2MB" required
