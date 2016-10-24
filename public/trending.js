@@ -1,5 +1,5 @@
-angular.module('Display',[])
-.controller('DisplayCtrl', [ '$scope', 'Pictures', function($scope, Pictures) {
+angular.module('Trending',[])
+.controller('TrendingCtrl', [ '$scope', 'Pictures', function($scope, Pictures) {
   $scope.pics = $scope.pics || [];
 
   $scope.getPics = function() {
@@ -22,7 +22,7 @@ angular.module('Display',[])
   $scope.getPics();
 
   $scope.like = function(databaseID) {
-    console.log('line 25 key display.js $scope.like', databaseID);
+    console.log('line 25 key trending.js $scope.like', databaseID);
     for(var i = 0; i < $scope.pics.length; i++) {
       if($scope.pics[i].databaseID === databaseID) {
         var picture = $scope.pics[i];
