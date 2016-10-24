@@ -61,7 +61,7 @@ ng-map {
   width: 58%;
   float: right;
   padding: 1%;
-  max-height: 90%;
+  max-height: 80%;
 }
 
 .result {
@@ -164,4 +164,8 @@ li a {
 li.active a {
   color: white;
   text-decoration: none;
+}
+
+.underbar {
+  border-bottom: 2px blue solid;
 }

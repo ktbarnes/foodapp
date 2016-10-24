@@ -52,8 +52,10 @@
     types="{{types}}"
     on-place-changed="mapModule.placeChanged()" /> <br/>
   <div ng-show="mapModule.place">
+  <!--
     Address = {{mapModule.place.formatted_address}} <br/>
     Location: {{mapModule.place.geometry.location}}<br/>
+    -->
   </div>
     <!-- address : {{mapModule.address}} -->
   <ng-map zoom="13" center="[40.747559, -73.989861]">
@@ -61,20 +63,20 @@
   </ng-map>
 </div>
 
-<!--
-<a href="#trending">Trending</a>
-<a href="#upload">Upload</a>
-<a href="#display">Display</a>
--->
-<div ng-controller='DefaultCtrl'>
-  <ul>
-    <li ng-class="{'active': isActive('/trending')}"><a href="#trending">Trending</a></li>
-    <li ng-class="{'active': isActive('/upload')}"><a href="#upload">Upload</a></li>
-    <li ng-class="{'active': isActive('/display')}"><a href="#display">Display</a></li>
-  </ul>
+<div class = ''>
+
+  <div ng-controller='DefaultCtrl'>
+    <ul>
+      <li ng-class="{'active': isActive('/trending')}"><a href="#trending">Trending</a></li>
+      <li ng-class="{'active': isActive('/upload')}"><a href="#upload">Upload</a></li>
+      <li ng-class="{'active': isActive('/display')}"><a href="#display">Display</a></li>
+    </ul>
+  </div>
+
+  <ng-view> </ng-view>
+
 </div>
 
-<ng-view> </ng-view>
 </body>
 
 </html>
