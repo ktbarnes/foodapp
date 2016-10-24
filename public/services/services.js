@@ -31,4 +31,22 @@ angular.module('foodServices', [])
     like: like
   }
 
+}])
+
+.factory('Locations',['$http', function($http) {
+
+  var loc = {};
+  var saveLoc = function(location) {
+    loc = location;
+  }
+
+  var getLoc = function() {
+    return loc;
+  }
+
+  return {
+    saveLoc: saveLoc,
+    getLoc: getLoc
+  }
+
 }]);

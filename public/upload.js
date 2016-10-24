@@ -1,6 +1,7 @@
 angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
-.controller('UploadCtrl', [ '$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
+.controller('UploadCtrl', [ '$scope', 'Upload', 'Pictures', '$timeout', '$scope', function($scope, Upload, Pictures, $timeout, $scope) {
   // $scope.pics = $scope.pics || [];
+  $scope.route = $route;
 
   $scope.uploadPic = function(file, details) {
     console.log(file);

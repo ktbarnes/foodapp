@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title> foodApp </title>
+  <title>Snappy Dish</title>
 
   <link href='style.css' rel='stylesheet'>
 
@@ -61,10 +61,17 @@
   </ng-map>
 </div>
 
+<!--
 <a href="#trending">Trending</a>
 <a href="#upload">Upload</a>
 <a href="#display">Display</a>
+-->
 
+<ul>
+  <li ng-class="{active: route.current.activeNav === 'trending'}"><a href="#trending">Trending</a></li>
+  <li ng-class="{active: route.current.activeNav === 'upload'}"><a href="#upload">Upload</a></li>
+  <li ng-class="{active: route.current.activeNav === 'display'}"><a href="#display">Display</a></li>
+</ul>
 
 <ng-view> </ng-view>
 </body>
