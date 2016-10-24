@@ -99,7 +99,7 @@ ng-map {
 
 .pic .innerpic img {
   padding: 1%;
-  max-width: 80%;
+  max-width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -175,4 +175,12 @@ fieldset {
  border: 2px solid blue;
  border-radius: 10px;
  text-align:center;
+}
+
+p.display {
+ color: blue;
+}
+
+.thumb {
+ max-width: 50%;
 }

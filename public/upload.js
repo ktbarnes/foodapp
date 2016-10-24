@@ -30,6 +30,7 @@ angular.module('FileUpload',['ngFileUpload','ngAutocomplete'])
       // console.log('line 20 have a response',resp.data.data);
       picture.url = resp.data.data.link;
       $scope.picFile = null;
+      $scope.autocomplete = '';
       Pictures.addOne(picture)
       .then(function(response) {
         picture.databaseID = response.data.databaseID;
