@@ -9,7 +9,6 @@ app.get('/', function(req,res) {
 });
 
 app.get('/node_modules', function(req,res) {
-  console.log('line 12 in server',req.body);
   res.sendFile(req.body.url);
 });
 
@@ -24,6 +23,7 @@ firebase.initializeApp({
 var db = firebase.database();
 var ref = db.ref("/Places");
 
+// Logs what is in the database when the server starts
 ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
@@ -32,13 +32,14 @@ app.post('/places', function(req,res){
   console.log('inside post',req.body);
   var now = new Date().valueOf();
   var filename = req.body.filename.split('.')[0];
+  // child is the unique ID that is the key to the information for the image reference that is being stored in the database
   var child = now + filename;
   ref.child(child).set({
     id: req.body.id,
     name: req.body.name,
     address: req.body.address,
     url: req.body.url,
-    likes: 0
+    likes: 0 // All photos start off with 0 likes
   })
   .then(function(response) {
     res.status(200).json({databaseID: child});
@@ -49,7 +50,6 @@ app.post('/places', function(req,res){
 });
 
 app.put('/places', function(req,res) {
-  console.log('updating number of likes',req.body)
   ref.child(req.body.databaseID).update({
     likes: req.body.likes
   })
@@ -62,28 +62,10 @@ app.put('/places', function(req,res) {
 });
 
 app.get('/places', function(req,res){
+  // Send all of the data in the database upon loading the trending page
   ref.once("value", function(snapshot) {
     res.json(snapshot.val());
   });
 });
-
-// var locRef = db.ref('/Location');
-
-// app.post('/location', function(req,res){
-//   locRef.set({
-//     address: req.body.address,
-//     location: req.body.location
-//   })
-//   .then(res.status(200))
-//   .catch(function(error) {
-//     console.error(error)
-//   });
-// });
-
-// app.get('/location', function(req,res){
-//   locRef.once("value", function(snapshot) {
-//     res.json(snapshot.val());
-//   });
-// });
 
 app.listen(process.env.PORT || 7777)
