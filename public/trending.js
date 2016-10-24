@@ -33,9 +33,4 @@ angular.module('Trending',[])
     Pictures.like(picture);
   }
 
-  $scope.isActive = function(route) {
-    console.log(route, $location.path());
-    return route === $location.path();
-  }
-
 }]);
