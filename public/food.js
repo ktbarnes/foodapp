@@ -1,8 +1,9 @@
-angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trending'])
+angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trending', 'Display'])
 .config(function($routeProvider) {
   $routeProvider
   .when('/display', {
     templateUrl: 'views/display.html',
+    controller: 'DisplayCtrl'
   })
   .when('/trending', {
     templateUrl: 'views/trending.html',
