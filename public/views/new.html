@@ -1,10 +1,10 @@
-<div class='trending RightContent' ng-controller='TrendingCtrl'>
+<div class='trending' ng-controller='TrendingCtrl'>
 
   <form name="filter">
     <label>Search: <input type='text' ng-model='search'></label>
   </form>
 
-  <div class='pic' ng-repeat="($index, pic) in pics | filter:search | orderBy: '-likes' " >
+  <div class='pic' ng-repeat="($index, pic) in pics | filter:search | orderBy: '-databaseID' " >
     <img ng-src='{{pic.url}}'></img>
     <h4 class='name'>{{pic.name}}</h4>
     <p>{{pic.address}}</p>
