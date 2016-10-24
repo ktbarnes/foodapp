@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
-#map {
+ng-map {
   height: 90%;
   width: 48%;
   float: left;
@@ -51,6 +51,7 @@ html, body {
   font-size: 13px;
   font-weight: 300;
 }
+
 #target {
   width: 345px;
 }
@@ -66,4 +67,19 @@ html, body {
   border: 2px solid lightgrey;
   border-radius: 10px;
   padding: 10;
+}
+
+.trending {
+  float: left;
+}
+
+.pic {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 30px;
+}
+
+.pic img {
+  height: 75%;
+  width: 75%;
 }
