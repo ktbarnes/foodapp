@@ -95,14 +95,34 @@ ng-map {
 }
 
 .pic .innerpic img {
+  padding: 1%;
   max-width: 90%;
-  /*
+  display: block;
+  
   margin-left: auto;
-  margin-right: auto
-  */  /*
+  margin-right: auto;
+ /*
   height: 75%;
   width: 75%;
   */
+}
+
+h3 {
+  color: blue;
+  text-align: center;
+}
+
+p {
+  display: block;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  color: blue;
+  border-radius: 10px;
+
 }
 
 .trendingSearch {
@@ -110,24 +130,31 @@ ng-map {
   margin-right: auto;
 }
 
+ul {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 li {
-    display: inline-block;
-    width: 10%;
-    padding: 1em;
-    border: 2px solid blue;
-    text-align: center;
-    color: lightblue;
+  display: inline-block;
+  width: 17.5%;
+  padding: 1%;
+  border: 2px solid blue;
+  border-radius: 10px;
+  text-align: center;
+  color: lightblue;
 }
 
 .active {
-    background: blue;
+  background: blue;
 }
 
 li a {
-    text-decoration: none;
+  color: blue;
+  text-decoration: none;
 }
 
 li.active a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }

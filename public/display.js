@@ -15,6 +15,6 @@ angular.module('Display',[])
   }
 
   $scope.getLocation();
-  setInterval($scope.getLocation,500);
+  setInterval($scope.getLocation,50);
 
 }]);
