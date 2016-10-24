@@ -72,6 +72,8 @@ ng-map {
 
 .trending {
   float: left;
+  border: blue;
+  padding: 10;
 }
 
 .pic {
@@ -96,9 +98,8 @@ ng-map {
 
 .pic .innerpic img {
   padding: 1%;
-  max-width: 90%;
+  max-width: 80%;
   display: block;
-  
   margin-left: auto;
   margin-right: auto;
  /*
@@ -120,12 +121,18 @@ p {
 button {
   display: block;
   margin: 0 auto;
-  color: blue;
+  color: white;
   border-radius: 10px;
-
+  font-family: Arial;
+  /*background: #3498db;*/
+  background: blue;
+  padding: 10px 50px 10px 50px;
 }
 
 .trendingSearch {
+  display: block;
+  width: 70%;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
