@@ -116,9 +116,10 @@ li {
     padding: 1em;
     border: 2px solid blue;
     text-align: center;
+    color: lightblue;
 }
 
-li.active {
+.active {
     background: blue;
 }
 

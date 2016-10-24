@@ -1,6 +1,6 @@
 angular.module('Trending',[])
-.controller('TrendingCtrl', [ '$scope', 'Pictures', '$route', function($scope, Pictures, $route) {
-  $scope.route = $route;
+.controller('TrendingCtrl', [ '$scope', 'Pictures', function($scope, Pictures) {
+
   $scope.pics = $scope.pics || [];
 
   $scope.getPics = function() {
@@ -31,6 +31,11 @@ angular.module('Trending',[])
     }
     picture.likes++;
     Pictures.like(picture);
+  }
+
+  $scope.isActive = function(route) {
+    console.log(route, $location.path());
+    return route === $location.path();
   }
 
 }]);
