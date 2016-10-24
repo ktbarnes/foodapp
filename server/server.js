@@ -4,14 +4,17 @@ var app = express();
 
 require('./middleware.js')(app, express);
 
+// Send index.html on page load
 app.get('/', function(req,res) {
   res.sendFile('index.html');
 });
 
+// Route to send npm dependencies
 app.get('/node_modules', function(req,res) {
   res.sendFile(req.body.url);
 });
 
+// Using firebase databause so require firebase module
 var firebase = require("firebase");
 
 // Initialize the app with no authentication
@@ -28,8 +31,8 @@ ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 
+// Route to post image link reference to database
 app.post('/places', function(req,res){
-  console.log('inside post',req.body);
   var now = new Date().valueOf();
   var filename = req.body.filename.split('.')[0];
   // child is the unique ID that is the key to the information for the image reference that is being stored in the database
@@ -49,6 +52,7 @@ app.post('/places', function(req,res){
   });
 });
 
+// Update the number of likes for a particular photo
 app.put('/places', function(req,res) {
   ref.child(req.body.databaseID).update({
     likes: req.body.likes
@@ -61,8 +65,8 @@ app.put('/places', function(req,res) {
   });
 });
 
+// Send all of the data in the database upon loading the trending page
 app.get('/places', function(req,res){
-  // Send all of the data in the database upon loading the trending page
   ref.once("value", function(snapshot) {
     res.json(snapshot.val());
   });

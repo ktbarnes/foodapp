@@ -1,12 +1,14 @@
 angular.module('FileUpload', ['ngFileUpload','ngAutocomplete'])
 .controller('UploadCtrl', ['$scope', 'Upload', 'Pictures', '$timeout', function($scope, Upload, Pictures, $timeout) {
 
+  // Start with no result and no error from the upload
   $scope.result = false;
   $scope.error = false;
   
   // Fired upon ng-click of button in upload.html view
   $scope.uploadPic = function(file, details) {
 
+    // Start with no result and no error from the upload
     $scope.result = false;
     $scope.error = false;
 
@@ -28,9 +30,12 @@ angular.module('FileUpload', ['ngFileUpload','ngAutocomplete'])
     .then(function(resp){
       // Displays success message if upload is successful
       $scope.result = true;
+      // Adds the link to the picture object
       picture.url = resp.data.data.link;
+      // Clears the picture and location from the form
       $scope.picFile = null;
       $scope.autocomplete = '';
+      // Sends a post request to the server to add picture reference to the database
       Pictures.addOne(picture);
     })
     .catch(function(error) {
