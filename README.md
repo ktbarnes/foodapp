@@ -45,7 +45,17 @@ npm install
 ### Roadmap
 
 - Add user authentication
+- Build out display.html
 
+
+## Stack
+
+Firebase (database)
+Angular 1.0
+Express
+Node
+
+Modules: [ngmap](https://github.com/allenhwkim/angularjs-google-maps), [ng-file-upload](https://github.com/danialfarid/ng-file-upload)
 
 ## Contributing
 
