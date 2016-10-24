@@ -1,87 +1,62 @@
 <html>
-<head>
-  <title>Snappy Dish</title>
-  <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
-  <link href='style.css' rel='stylesheet'>
-  <link href='pageStyle.css' rel='stylesheet'>
-  <script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.js"></script>
-  <script src="/node_modules/angular/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-  <script src='/node_modules/ng-file-upload/dist/ng-file-upload.js'></script>
-  <script src='/node_modules/ng-autocomplete/src/ngAutocomplete.js'></script>
-  <script src='/node_modules/ngmap/build/scripts/ng-map.js'></script>
-  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVz6A7o7A9KsbM4faEJzcDQJ30yMHdHzo&libraries=places&callback=initMap" async defer></script> -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADxfvlkkFsXf7TdnHHfPaoQRQ6UhNttvg&libraries=places"></script>
 
-  <script src='services/services.js'></script>
-  <script src='food.js'></script>
-  <script src='upload.js'></script>
-  <script src='map.js'></script>
-  <script src='trending.js'></script>
-  <script src='display.js'></script>
+  <head>
+    <title>Snappy Dish</title>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+    <link href='style.css' rel='stylesheet'>
+    <link href='pageStyle.css' rel='stylesheet'>
+    <script src="/node_modules/lodash/lodash.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src='/node_modules/ng-file-upload/dist/ng-file-upload.js'></script>
+    <script src='/node_modules/ng-autocomplete/src/ngAutocomplete.js'></script>
+    <script src='/node_modules/ngmap/build/scripts/ng-map.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADxfvlkkFsXf7TdnHHfPaoQRQ6UhNttvg&libraries=places"></script>
+    <script src='services/services.js'></script>
+    <script src='food.js'></script>
+    <script src='upload.js'></script>
+    <script src='map.js'></script>
+    <script src='trending.js'></script>
+    <script src='display.js'></script>
+  </head>
 
-</head>
+  <body ng-app="foodApp">
 
-<body ng-app="foodApp">
+    <div class="bgimg-1">
+      <div class="caption">
+       <span class="border">Snappy Dish</span>
+     </div>
+    </div>
 
-  <div class="bgimg-1">
-    <div class="caption">
-     <span class="border">Snappy Dish</span>
-   </div>
-  </div>
-<div class='content'>
-<!--
-  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div class='content'>
 
- <div id="map"></div>
+      <div ng-controller='MapCtrl as mapModule' class='left'>
+        Enter an address: <br/>
+        <input id="pac-input"
+          class="controls"
+          places-auto-complete size=80
+          ng-model="mapModule.address"
+          component-restrictions="{country:'us'}"
+          types="{{types}}"
+          on-place-changed="mapModule.placeChanged()" /> <br/>
 
-<div id='results' class='RightContent' ng-controller='SearchCtrl'>
-  <div class='result' ng-repeat='result in results'>
-    <h4 class='name'>{{result.name}}</h4>
-    <p>{{result.description}}</p>
-  </div>
-</div>
--->
-<div ng-controller='MapCtrl as mapModule' class='left'>
-  <!-- <form name='mapForm'>
-  <input id="pac-input" class="controls" type="text" ng-autocomplete ng-model='mapautocomplete' placeholder="Search Box">
-</form>
-<div id='map' ng-controller="MapCtrl">
-<ng-map center="[40.74, -74.18]"></ng-map>
-</div> -->
+        <ng-map zoom="13" center="[40.747559, -73.989861]">
+          <marker position="{{mapModule.place.geometry.location}}" animation="Animation.BOUNCE"></marker>
+        </ng-map>
+      </div>
 
-  Enter an address: <br/>
-  <input id="pac-input"
-    class="controls"
-    places-auto-complete size=80
-    ng-model="mapModule.address"
-    component-restrictions="{country:'us'}"
-    types="{{types}}"
-    on-place-changed="mapModule.placeChanged()" /> <br/>
-  <div ng-show="mapModule.place">
-  <!--
-    Address = {{mapModule.place.formatted_address}} <br/>
-    Location: {{mapModule.place.geometry.location}}<br/>
-    -->
-  </div>
-    <!-- address : {{mapModule.address}} -->
-  <ng-map zoom="13" center="[40.747559, -73.989861]">
-    <marker position="{{mapModule.place.geometry.location}}" animation="Animation.BOUNCE"></marker>
-  </ng-map>
-</div>
+      <div ng-controller='DefaultCtrl' class='right'>
+        <ul>
+          <li ng-class="{'active': isActive('/trending')}"><a href="#trending">Trending</a></li>
+          <li ng-class="{'active': isActive('/upload')}"><a href="#upload">Upload</a></li>
+          <li ng-class="{'active': isActive('/display')}"><a href="#display">Display</a></li>
+        </ul>
+      </div>
 
+      <ng-view></ng-view>
 
-<div ng-controller='DefaultCtrl' class='right'>
-  <ul>
-    <li ng-class="{'active': isActive('/trending')}"><a href="#trending">Trending</a></li>
-    <li ng-class="{'active': isActive('/upload')}"><a href="#upload">Upload</a></li>
-    <li ng-class="{'active': isActive('/display')}"><a href="#display">Display</a></li>
-  </ul>
-</div>
+    </div>
 
-<ng-view> </ng-view>
-</div>
-
-</body>
+  </body>
 
 </html>

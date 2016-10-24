@@ -78,10 +78,6 @@ ng-map {
 }
 
 .pic {
-  /*
-  width: 600px;
-  height: 600px;
-  */
   max-width: 100%;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -103,10 +99,7 @@ ng-map {
   display: block;
   margin-left: auto;
   margin-right: auto;
- /*
-  height: 75%;
-  width: 75%;
-  */
+  border-radius: 10px;
 }
 
 h3 {
