@@ -1,5 +1,5 @@
 angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trending', 'Display'])
-.config(function($routeProvider) {
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/display', {
     templateUrl: 'views/display.html',
@@ -19,8 +19,9 @@ angular.module("foodApp", ['FileUpload','ngRoute','foodServices','Map', 'Trendin
   .otherwise({
     redirectTo: '/trending.html'
   });
-})
-.controller('SearchCtrl',['$scope', function($scope) {
-  $scope.results = $scope.results || [{name: 'Results will display here',
-    description: 'Search for details'}];
+}])
+.controller('DefaultCtrl',['$scope', '$location', function($scope, $location) {
+  $scope.isActive = function(route) {
+    return route === $location.path();
+  }
 }]);
