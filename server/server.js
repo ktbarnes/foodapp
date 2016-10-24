@@ -65,6 +65,25 @@ app.get('/places', function(req,res){
   ref.once("value", function(snapshot) {
     res.json(snapshot.val());
   });
-})
+});
+
+var locRef = db.ref('/Location');
+
+app.post('/location', function(req,res){
+  locRef.set({
+    address: req.body.address,
+    location: req.body.location
+  })
+  .then(res.status(200))
+  .catch(function(error) {
+    console.error(error)
+  });
+});
+
+app.get('/location', function(req,res){
+  locRef.once("value", function(snapshot) {
+    res.json(snapshot.val());
+  });
+});
 
 app.listen(process.env.PORT || 7777)
